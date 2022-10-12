@@ -1,10 +1,15 @@
 import './App.css';
-
+import styled from 'style-components'
 
 function App() {
   return (
-  <h1>Hello</h1>
+  <>
+  <Spotlight>
+    
+  </Spotlight>
+  </>
   );
 }
 
 export default App;
+const Spotlight = styled.section``;
