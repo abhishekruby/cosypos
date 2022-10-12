@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+/src/components/Landing-page-Task-7.png
+/src/components/Task-7.txt
 # testing
 /coverage
 
