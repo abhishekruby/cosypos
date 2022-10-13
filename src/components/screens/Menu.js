@@ -52,7 +52,7 @@ function Menu() {
             </Search>
           </Head>
           <Category>
-            <Item>
+            <Item style={{ background: "var(--card-1)" }}>
               <ImageContainer>
                 <CategoryImage
                   src={require(`../assets/images/card-1.svg`).default}
@@ -64,7 +64,7 @@ function Menu() {
                 <Number>13 items</Number>
               </Content>
             </Item>
-            <Item>
+            <Item style={{ background: "var(--card-2)" }}>
               <ImageContainer>
                 <CategoryImage
                   src={require(`../assets/images/card-2.svg`).default}
@@ -76,7 +76,7 @@ function Menu() {
                 <Number>13 items</Number>
               </Content>
             </Item>
-            <Item>
+            <Item style={{ background: "var(--card-3)" }}>
               <ImageContainer>
                 <CategoryImage
                   src={require(`../assets/images/card-3.svg`).default}
@@ -88,7 +88,7 @@ function Menu() {
                 <Number>13 items</Number>
               </Content>
             </Item>
-            <Item>
+            <Item style={{ background: "var(--card-4)" }}>
               <ImageContainer>
                 <CategoryImage
                   src={require(`../assets/images/card-4.svg`).default}
@@ -100,7 +100,7 @@ function Menu() {
                 <Number>13 items</Number>
               </Content>
             </Item>
-            <Item>
+            <Item style={{ background: "var(--card-5)" }}>
               <ImageContainer>
                 <CategoryImage
                   src={require(`../assets/images/card-5.svg`).default}
@@ -112,7 +112,7 @@ function Menu() {
                 <Number>13 items</Number>
               </Content>
             </Item>
-            <Item>
+            <Item style={{ background: "var(--card-6)" }}>
               <ImageContainer>
                 <CategoryImage
                   src={require(`../assets/images/card-6.svg`).default}
@@ -124,7 +124,7 @@ function Menu() {
                 <Number>13 items</Number>
               </Content>
             </Item>
-            <Item>
+            <Item style={{ background: "var(--card-7)" }}>
               <ImageContainer>
                 <CategoryImage
                   src={require(`../assets/images/card-7.svg`).default}
@@ -136,7 +136,7 @@ function Menu() {
                 <Number>13 items</Number>
               </Content>
             </Item>
-            <Item>
+            <Item style={{ background: "var(--card-8)" }}>
               <ImageContainer>
                 <CategoryImage
                   src={require(`../assets/images/card-8.svg`).default}
@@ -218,18 +218,38 @@ const Search = styled.div``;
 const SearchIcon = styled.img``;
 const SearchInput = styled.input``;
 
-const Category = styled.ul``;
-const Item = styled.li``;
+const Category = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
+const Item = styled.li`
+  width: 24%;
+  height: 110px;
+  margin: 9px 0px;
+  border-radius: 8px;
+`;
 const ImageContainer = styled.div``;
 const CategoryImage = styled.img``;
 const Content = styled.div``;
 const Title = styled.h4``;
 const Number = styled.span``;
 
-const Line = styled.hr``;
+const Line = styled.hr`
+  border-bottom: 1.5px solid #2D2D2D;
+`;
 
-const Dishes = styled.ul``;
-const Dish = styled.li``;
+const Dishes = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
+const Dish = styled.li`
+  width: 24%;
+  height: 110px;
+  margin: 9px 0px;
+  border-radius: 8px;
+`;
 const BgTag = styled.div``;
 const Top = styled.div``;
 const Arrow = styled.img``;
@@ -244,7 +264,10 @@ const Plus = styled.span``;
 const PlusImage = styled.img``;
 
 const Bottom = styled.div``;
-const ProcessingOrders = styled.ul``;
+const ProcessingOrders = styled.ul`
+display: flex;
+
+`;
 const Order = styled.li``;
 const Code = styled.div``;
 const OrderDetail = styled.div``;
