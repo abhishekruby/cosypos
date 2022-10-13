@@ -1,49 +1,49 @@
 [
     {
         "id": 1,
-        "image": "../assets/images/break-fast.svg",
+        "image": "breakfast",
         "title":"Break fast",
         "item_number": 13
     },
     {
         "id": 2,
-        "image": "../assets/images/soup.svg",
+        "image": "soup",
         "title":"Soups",
         "item_number": 13
     },
     {
         "id": 3,
-        "image": "../assets/images/pasta.svg",
+        "image": "pasta",
         "title":"Pasta",
         "item_number": 13
     },
     {
         "id": 4,
-        "image": "../assets/images/sushi.svg",
+        "image": "sushi",
         "title":"Sushi",
         "item_number": 13
     },
     {
         "id": 5,
-        "image": "../assets/images/main-course.svg",
+        "image": "maincourse",
         "title":"Main course",
         "item_number": 13
     },
     {
         "id": 6,
-        "image": "../assets/images/desserts.svg",
+        "image": "desserts",
         "title":"Desserts",
         "item_number": 13
     },
     {
         "id": 7,
-        "image": "../assets/images/drinks.svg",
+        "image": "drinks",
         "title":"Drinks",
         "item_number": 13
     },
     {
         "id": 8,
-        "image": "../assets/images/alcohol.svg",
+        "image": "alcohol",
         "title":"Alcohol",
         "item_number": 13
     }

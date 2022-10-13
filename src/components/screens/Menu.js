@@ -1,13 +1,255 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import dishes from '../JSON/dishes.json'
+import dishes from "../JSON/dishes.json";
+import categorys from "../JSON/category.json";
 
 function Menu() {
+  // Dishes Rendering Function
+  let renderDishes = () => {
+    return dishes.map((dish) => {
+      return (
+        <Dish style={{ background: `var(--card-5)` }}>
+          <BgTag>
+            <Top>
+              Orders{" "}
+              <Arrow src={require("../assets/images/arrow.svg").default} />{" "}
+              Kitchen
+            </Top>
+            <DishDetail>
+              <Name>{dish.title}</Name>
+              <Price>${dish.price}</Price>
+            </DishDetail>
+            <AddDish>
+              <Minus>
+                <MinusImage
+                  src={require("../assets/images/minus.svg").default}
+                  alt="Minus"
+                />
+              </Minus>
+              <DishAdded>0</DishAdded>
+              <Plus>
+                <PlusImage
+                  src={require("../assets/images/plus.svg").default}
+                  alt="Plus"
+                />
+              </Plus>
+            </AddDish>
+          </BgTag>
+        </Dish>
+      );
+    });
+  };
 
+  // category rendering function
   return (
-    <div>Menu</div>
-    
-  )
+    <MenuContainer>
+      <Wrapper className="wrapper">
+        <Container>
+          <Head>
+            <Search>
+              <SearchIcon />
+              <SearchInput placeholder="Search" />
+            </Search>
+          </Head>
+          <Category>
+            <Item>
+              <ImageContainer>
+                <CategoryImage
+                  src={require(`../assets/images/card-1.svg`).default}
+                  alt="cardimage"
+                />
+              </ImageContainer>
+              <Content>
+                <Title>Break fast</Title>
+                <Number>13 items</Number>
+              </Content>
+            </Item>
+            <Item>
+              <ImageContainer>
+                <CategoryImage
+                  src={require(`../assets/images/card-2.svg`).default}
+                  alt="cardimage"
+                />
+              </ImageContainer>
+              <Content>
+                <Title>Soups</Title>
+                <Number>13 items</Number>
+              </Content>
+            </Item>
+            <Item>
+              <ImageContainer>
+                <CategoryImage
+                  src={require(`../assets/images/card-3.svg`).default}
+                  alt="cardimage"
+                />
+              </ImageContainer>
+              <Content>
+                <Title>Pasta</Title>
+                <Number>13 items</Number>
+              </Content>
+            </Item>
+            <Item>
+              <ImageContainer>
+                <CategoryImage
+                  src={require(`../assets/images/card-4.svg`).default}
+                  alt="cardimage"
+                />
+              </ImageContainer>
+              <Content>
+                <Title>Sushi</Title>
+                <Number>13 items</Number>
+              </Content>
+            </Item>
+            <Item>
+              <ImageContainer>
+                <CategoryImage
+                  src={require(`../assets/images/card-5.svg`).default}
+                  alt="cardimage"
+                />
+              </ImageContainer>
+              <Content>
+                <Title>Main course</Title>
+                <Number>13 items</Number>
+              </Content>
+            </Item>
+            <Item>
+              <ImageContainer>
+                <CategoryImage
+                  src={require(`../assets/images/card-6.svg`).default}
+                  alt="cardimage"
+                />
+              </ImageContainer>
+              <Content>
+                <Title>Desserts</Title>
+                <Number>13 items</Number>
+              </Content>
+            </Item>
+            <Item>
+              <ImageContainer>
+                <CategoryImage
+                  src={require(`../assets/images/card-7.svg`).default}
+                  alt="cardimage"
+                />
+              </ImageContainer>
+              <Content>
+                <Title>Drinks</Title>
+                <Number>13 items</Number>
+              </Content>
+            </Item>
+            <Item>
+              <ImageContainer>
+                <CategoryImage
+                  src={require(`../assets/images/card-8.svg`).default}
+                  alt="cardimage"
+                />
+              </ImageContainer>
+              <Content>
+                <Title>Alcohol</Title>
+                <Number>13 items</Number>
+              </Content>
+            </Item>
+          </Category>
+
+          <Line />
+
+          <Dishes>{renderDishes()}</Dishes>
+
+          <Bottom>
+            <ProcessingOrders>
+              <Order>
+                <Code>T4</Code>
+                <OrderDetail>
+                  <Customer>Leslie K.</Customer>
+                  <Kitchen>
+                    6 items{" "}
+                    <ArrowIcon
+                      src={require("../assets/images/arrow.svg").default}
+                    />{" "}
+                    Kitchen
+                  </Kitchen>
+                  <Process>In process</Process>
+                </OrderDetail>
+              </Order>
+              <Order>
+                <Code>T2</Code>
+                <OrderDetail>
+                  <Customer>Leslie K.</Customer>
+                  <Kitchen>
+                    6 items{" "}
+                    <ArrowIcon
+                      src={require("../assets/images/arrow.svg").default}
+                    />{" "}
+                    Kitchen
+                  </Kitchen>
+                  <Process>In process</Process>
+                </OrderDetail>
+              </Order>
+              <Order>
+                <Code>T4</Code>
+                <OrderDetail>
+                  <Customer>Leslie K.</Customer>
+                  <Kitchen>
+                    6 items{" "}
+                    <ArrowIcon
+                      src={require("../assets/images/arrow.svg").default}
+                    />{" "}
+                    Kitchen
+                  </Kitchen>
+                  <Process>In process</Process>
+                </OrderDetail>
+              </Order>
+            </ProcessingOrders>
+          </Bottom>
+        </Container>
+      </Wrapper>
+    </MenuContainer>
+  );
 }
 
-export default Menu
+export default Menu;
+
+const MenuContainer = styled.section`
+  width: 62%;
+`;
+const Wrapper = styled.div``;
+const Container = styled.div``;
+const Head = styled.div``;
+const Search = styled.div``;
+const SearchIcon = styled.img``;
+const SearchInput = styled.input``;
+
+const Category = styled.ul``;
+const Item = styled.li``;
+const ImageContainer = styled.div``;
+const CategoryImage = styled.img``;
+const Content = styled.div``;
+const Title = styled.h4``;
+const Number = styled.span``;
+
+const Line = styled.hr``;
+
+const Dishes = styled.ul``;
+const Dish = styled.li``;
+const BgTag = styled.div``;
+const Top = styled.div``;
+const Arrow = styled.img``;
+const DishDetail = styled.div``;
+const Name = styled.h4``;
+const Price = styled.span``;
+const AddDish = styled.div``;
+const Minus = styled.span``;
+const MinusImage = styled.img``;
+const DishAdded = styled.span``;
+const Plus = styled.span``;
+const PlusImage = styled.img``;
+
+const Bottom = styled.div``;
+const ProcessingOrders = styled.ul``;
+const Order = styled.li``;
+const Code = styled.div``;
+const OrderDetail = styled.div``;
+const Customer = styled.h4``;
+const Kitchen = styled.blockquote``;
+const ArrowIcon = styled.img``;
+
+const Process = styled.div``;

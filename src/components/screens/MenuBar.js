@@ -20,7 +20,7 @@ function MenuBar() {
                 <ListAnchor> Reservation</ListAnchor>
               </MenuList>
               <MenuList>
-                <ListAnchor> Table Service</ListAnchor>
+                <ListAnchor> Table Services</ListAnchor>
               </MenuList>
               <MenuList>
                 <ListAnchor> Menu</ListAnchor>
@@ -40,11 +40,23 @@ function MenuBar() {
                 <Name>Lesliya k</Name>
               </User>
               <User>
-                <Letter>C</Letter>
+                <Letter
+                  style={{
+                    background: "var(--card-8)",
+                  }}
+                >
+                  C
+                </Letter>
                 <Name>Camaron W.</Name>
               </User>
               <User>
-                <Letter>J</Letter>
+                <Letter
+                  style={{
+                    background: "var(--card-7)",
+                  }}
+                >
+                  J
+                </Letter>
                 <Name>Jacob j.</Name>
               </User>
             </UserList>
@@ -68,13 +80,15 @@ const Wrapper = styled.div``;
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  height: 100vh;
 `;
 const TopSection = styled.div``;
 const Logo = styled.h1`
   width: 70%;
   margin: 0 auto;
   padding-top: 15px;
+  cursor: pointer;
 `;
 const LogoAnchor = styled.a`
   display: inline-block;
@@ -88,40 +102,84 @@ const MenuListContainer = styled.ul`
   margin-top: 15px;
   display: flex;
   flex-direction: column;
-  height: 250px;
+  height: 210px;
   justify-content: space-between;
+  align-items: center;
 `;
 const MenuList = styled.li`
-  width: 55%;
-  margin: 0 auto;
+  width: 82%;
   color: #a6a6a6;
   position: relative;
+  cursor: pointer;
   ::before {
     content: "";
     position: absolute;
     top: -6px;
-    left: -16px;
+    left: 6px;
     height: 40px;
-    width: 190px;
+    width: 170px;
     border-radius: 8px;
     background: #2d2d2d;
-    opacity: 0.7;
+    opacity: 0;
     z-index: -1;
+    cursor: pointer;
   }
   :hover {
     color: #fff;
   }
+  :hover::before {
+    opacity: 0.7;
+    transition: opacity 0.2s ease-out;
+  }
 `;
 const ListAnchor = styled.a`
   font-size: 15px;
+  margin-left: 20px;
 `;
 
-const BottomSection = styled.div``;
+const BottomSection = styled.div`
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 15px;
+`;
 const UserList = styled.ul``;
-const User = styled.li``;
-const Letter = styled.span``;
-const Name = styled.span``;
+const User = styled.li`
+  margin-bottom: 15px;
+  border-radius: 20px;
+  padding: 6px;
+  border: 1px solid #a6a6a6;
+  width: fit-content;
+  cursor: pointer;
+  &:hover {
+    background: #8e8e8e4a;
+  }
+`;
+const Letter = styled.span`
+  padding: 5px 12px;
+  border-radius: 50%;
+  background: var(--card-2);
+  color: #000;
+  font-weight: 500;
+  margin-right: 12px;
+`;
+const Name = styled.span`
+  font-size: 14px;
+`;
 
 const Year = styled.div``;
-const YearLetter = styled.span``;
-const AppYear = styled.span``;
+const YearLetter = styled.span`
+  font-size: 13px;
+  font-weight: 800;
+  background: #c6b1e1;
+  color: #000;
+  border-radius: 25px;
+  padding: 3px 8px;
+`;
+const AppYear = styled.span`
+  margin-left: 10px;
+  color: #a6a6a6;
+  font-size: 12px;
+`;
