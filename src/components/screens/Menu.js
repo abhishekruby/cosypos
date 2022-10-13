@@ -10,9 +10,11 @@ function Menu() {
         <Dish style={{ background: `var(--card-5)` }}>
           <BgTag>
             <Top>
-              Orders{" "}
-              <Arrow src={require("../assets/images/arrow.svg").default} />{" "}
-              Kitchen
+              <Span>Orders</Span>{" "}
+              <ArrowDiv>
+                <Arrow src={require("../assets/images/arrow.svg").default} />{" "}
+              </ArrowDiv>
+              <Span>Kitchen</Span>
             </Top>
             <DishDetail>
               <Name>{dish.title}</Name>
@@ -39,7 +41,6 @@ function Menu() {
     });
   };
 
-  // category rendering function
   return (
     <MenuContainer>
       <Wrapper className="wrapper">
@@ -219,7 +220,7 @@ const Head = styled.div`
   display: flex;
 `;
 const Search = styled.div`
-width: 32%;
+  width: 32%;
   display: flex;
   align-items: center;
   background: #2d2d2d;
@@ -249,12 +250,25 @@ const Item = styled.li`
   height: 120px;
   margin: 5px 0px;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 `;
-const ImageContainer = styled.div``;
+const ImageContainer = styled.div`
+  margin-left: 10px;
+`;
 const CategoryImage = styled.img``;
-const Content = styled.div``;
-const Title = styled.h4``;
-const Number = styled.span``;
+const Content = styled.div`
+  margin-left: 10px;
+`;
+const Title = styled.h4`
+  color: #000;
+  font-weight: 600;
+`;
+const Number = styled.span`
+  font-size: 14px;
+  color: #8e8e8e;
+`;
 
 const Line = styled.hr`
   border-bottom: 1.5px solid #2d2d2d;
@@ -268,13 +282,31 @@ const Dishes = styled.ul`
 `;
 const Dish = styled.li`
   width: 24%;
-  height: 120px;
+  height: 140px;
   margin: 5px 0px;
   border-radius: 8px;
 `;
-const BgTag = styled.div``;
-const Top = styled.div``;
-const Arrow = styled.img``;
+const BgTag = styled.div`
+  background-color: #2d2d2d;
+  width: 90%;
+  margin-left: 10%;
+`;
+const Top = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 12px;
+  color: #8e8e8e;
+`;
+const ArrowDiv = styled.span`
+  width: 20px;
+  display: inline-block;
+`;
+const Arrow = styled.img`
+  height: 100%;
+  width: 100%;
+`;
+const Span = styled.span``;
 const DishDetail = styled.div``;
 const Name = styled.h4``;
 const Price = styled.span``;
