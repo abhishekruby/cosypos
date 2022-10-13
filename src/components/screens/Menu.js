@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import dishes from "../JSON/dishes.json";
-import categorys from "../JSON/category.json";
 
 function Menu() {
   // Dishes Rendering Function
@@ -47,7 +46,9 @@ function Menu() {
         <Container>
           <Head>
             <Search>
-              <SearchIcon />
+              <SearchIcon
+                src={require("../assets/images/search.svg").default}
+              />
               <SearchInput placeholder="Search" />
             </Search>
           </Head>
@@ -213,10 +214,30 @@ const MenuContainer = styled.section`
 `;
 const Wrapper = styled.div``;
 const Container = styled.div``;
-const Head = styled.div``;
-const Search = styled.div``;
-const SearchIcon = styled.img``;
-const SearchInput = styled.input``;
+const Head = styled.div`
+  height: 70px;
+  display: flex;
+`;
+const Search = styled.div`
+width: 32%;
+  display: flex;
+  align-items: center;
+  background: #2d2d2d;
+  opacity: 0.7;
+  margin: 14px 0px;
+  border-radius: 5px;
+`;
+const SearchIcon = styled.img`
+  width: 30px;
+  height: 20px;
+`;
+const SearchInput = styled.input`
+  &::placeholder {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+  }
+`;
 
 const Category = styled.ul`
   display: flex;
@@ -225,8 +246,8 @@ const Category = styled.ul`
 `;
 const Item = styled.li`
   width: 24%;
-  height: 110px;
-  margin: 9px 0px;
+  height: 120px;
+  margin: 5px 0px;
   border-radius: 8px;
 `;
 const ImageContainer = styled.div``;
@@ -236,7 +257,8 @@ const Title = styled.h4``;
 const Number = styled.span``;
 
 const Line = styled.hr`
-  border-bottom: 1.5px solid #2D2D2D;
+  border-bottom: 1.5px solid #2d2d2d;
+  margin: 5px 0px;
 `;
 
 const Dishes = styled.ul`
@@ -246,8 +268,8 @@ const Dishes = styled.ul`
 `;
 const Dish = styled.li`
   width: 24%;
-  height: 110px;
-  margin: 9px 0px;
+  height: 120px;
+  margin: 5px 0px;
   border-radius: 8px;
 `;
 const BgTag = styled.div``;
@@ -265,10 +287,11 @@ const PlusImage = styled.img``;
 
 const Bottom = styled.div``;
 const ProcessingOrders = styled.ul`
-display: flex;
-
+  display: flex;
 `;
-const Order = styled.li``;
+const Order = styled.li`
+  display: flex;
+`;
 const Code = styled.div``;
 const OrderDetail = styled.div``;
 const Customer = styled.h4``;
