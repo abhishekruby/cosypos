@@ -1,14 +1,87 @@
 * {
-  padding: 0;
   margin: 0;
-  appearance: none;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  background: transparent;
+  font-weight: normal;
   text-decoration: none;
-  color: #222;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: 'Poppins';
-  font-style: normal;
 }
 
+ol,
+ul {
+  list-style: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+body {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  color: #fff ;
+  background-color:#000;
+  overflow-x: hidden;
+  min-width: 320px;
+  font-weight: 500;
+}
+
+input,
+textarea,
+select {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+a {
+
+}
+
+a:hover {
+
+}
+
+.thumb {
+  display: block;
+}
+
+.thumb img {
+  display: block;
+  width: 100%;
+}
+
+p {
+  line-height: 1.6em;
+  font-size: 16px;
+  font-family: "Poppins", Arial;
+  font-weight: 500;
+  color: var(--Gray);
+}
+
+.hidden {
+  display: none;
+}
+
+br.clear {
+  clear: both;
+  line-height: 0;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.flex-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 :root {
   --card-1: #CFDDDB;
   --card-2: #E4CDEE;
