@@ -81,7 +81,7 @@ const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  height: 750px;
 `;
 const TopSection = styled.div``;
 const Logo = styled.h1`
@@ -102,7 +102,7 @@ const MenuListContainer = styled.ul`
   margin-top: 15px;
   display: flex;
   flex-direction: column;
-  height: 210px;
+  height: 250px;
   justify-content: space-between;
   align-items: center;
 `;
@@ -138,14 +138,17 @@ const ListAnchor = styled.a`
 `;
 
 const BottomSection = styled.div`
-  height: 220px;
+  height: 340px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   padding-bottom: 15px;
 `;
-const UserList = styled.ul``;
+const UserList = styled.ul`
+  height: 50%;
+  margin: auto 0;
+`;
 const User = styled.li`
   margin-bottom: 15px;
   border-radius: 20px;
@@ -171,7 +174,7 @@ const Name = styled.span`
 
 const Year = styled.div``;
 const YearLetter = styled.span`
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 800;
   background: #c6b1e1;
   color: #000;

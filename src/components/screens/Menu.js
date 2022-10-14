@@ -8,34 +8,32 @@ function Menu() {
     return dishes.map((dish) => {
       return (
         <Dish style={{ background: `var(--card-5)` }}>
-          <BgTag>
-            <Top>
-              <Span>Orders</Span>{" "}
-              <ArrowDiv>
-                <Arrow src={require("../assets/images/arrow.svg").default} />{" "}
-              </ArrowDiv>
-              <Span>Kitchen</Span>
-            </Top>
-            <DishDetail>
-              <Name>{dish.title}</Name>
-              <Price>${dish.price}</Price>
-            </DishDetail>
-            <AddDish>
-              <Minus>
-                <MinusImage
-                  src={require("../assets/images/minus.svg").default}
-                  alt="Minus"
-                />
-              </Minus>
-              <DishAdded>0</DishAdded>
-              <Plus>
-                <PlusImage
-                  src={require("../assets/images/plus.svg").default}
-                  alt="Plus"
-                />
-              </Plus>
-            </AddDish>
-          </BgTag>
+          <Top>
+            <Span>Orders</Span>{" "}
+            <ArrowDiv>
+              <Arrow src={require("../assets/images/arrow.svg").default} />{" "}
+            </ArrowDiv>
+            <Span>Kitchen</Span>
+          </Top>
+          <DishDetail>
+            <Name>{dish.title}</Name>
+            <Price>${dish.price}</Price>
+          </DishDetail>
+          <AddDish>
+            <Minus>
+              <MinusImage
+                src={require("../assets/images/minus.svg").default}
+                alt="Minus"
+              />
+            </Minus>
+            <DishAdded>0</DishAdded>
+            <Plus>
+              <PlusImage
+                src={require("../assets/images/plus.svg").default}
+                alt="Plus"
+              />
+            </Plus>
+          </AddDish>
         </Dish>
       );
     });
@@ -169,11 +167,18 @@ function Menu() {
                     />{" "}
                     Kitchen
                   </Kitchen>
-                  <Process>In process</Process>
                 </OrderDetail>
+                <Process style={{ display: "none" }}>In process</Process>
               </Order>
               <Order>
-                <Code>T2</Code>
+                <Code
+                  style={{
+                    background: "#525151",
+                    color: "#fff",
+                  }}
+                >
+                  T2
+                </Code>
                 <OrderDetail>
                   <Customer>Leslie K.</Customer>
                   <Kitchen>
@@ -183,11 +188,11 @@ function Menu() {
                     />{" "}
                     Kitchen
                   </Kitchen>
-                  <Process>In process</Process>
                 </OrderDetail>
+                <Process>In process</Process>
               </Order>
               <Order>
-                <Code>T4</Code>
+                <Code style={{ background: "#2d2d2d", color: "#fff" }}>T4</Code>
                 <OrderDetail>
                   <Customer>Leslie K.</Customer>
                   <Kitchen>
@@ -197,8 +202,8 @@ function Menu() {
                     />{" "}
                     Kitchen
                   </Kitchen>
-                  <Process>In process</Process>
                 </OrderDetail>
+                <Process>In process</Process>
               </Order>
             </ProcessingOrders>
           </Bottom>
@@ -247,7 +252,7 @@ const Category = styled.ul`
 `;
 const Item = styled.li`
   width: 24%;
-  height: 120px;
+  height: 140px;
   margin: 5px 0px;
   border-radius: 8px;
   display: flex;
@@ -285,20 +290,31 @@ const Dish = styled.li`
   height: 140px;
   margin: 5px 0px;
   border-radius: 8px;
-`;
-const BgTag = styled.div`
-  padding-top: 5px;
-  background-color: #2d2d2d;
-  width: 90%;
-  margin-left: 10%;
-  height: 140px;
+  position: relative;
+  z-index: -1;
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: #2d2d2d;
+    width: 95%;
+    margin-left: 5%;
+    height: 100%;
+    opacity: 1;
+    z-index: 1;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
 `;
 const Top = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   font-size: 12px;
+  padding-top: 5px;
   color: #8e8e8e;
+  position: relative;
+  z-index: 100;
 `;
 const ArrowDiv = styled.span`
   width: 20px;
@@ -312,6 +328,9 @@ const Span = styled.span``;
 const DishDetail = styled.div`
   font-size: 15px;
   margin: 10px;
+  position: relative;
+  z-index: 100;
+  padding-left: 5px;
 `;
 const Name = styled.h4``;
 const Price = styled.span`
@@ -322,6 +341,8 @@ const AddDish = styled.div`
   justify-content: end;
   align-items: center;
   margin-top: 15px;
+  position: relative;
+  z-index: 100;
 `;
 const Minus = styled.span`
   border-radius: 4px;
@@ -353,17 +374,53 @@ const PlusImage = styled.img`
   height: 100%;
 `;
 
-const Bottom = styled.div``;
+const Bottom = styled.div`
+  margin-top: 20px;
+`;
 const ProcessingOrders = styled.ul`
   display: flex;
+  align-items: center;
+  border-top: 1px solid #8e8e8e;
 `;
 const Order = styled.li`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 35%;
+  border-right: 1px solid #8e8e8e;
+  padding: 8px 5px;
+  &:first-child {
+    width: 30%;
+  }
+  &:last-child {
+    border: none;
+  }
 `;
-const Code = styled.div``;
-const OrderDetail = styled.div``;
-const Customer = styled.h4``;
-const Kitchen = styled.blockquote``;
-const ArrowIcon = styled.img``;
+const Code = styled.div`
+  background: var(--card-4);
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 500;
+`;
+const OrderDetail = styled.div`
+  height: 100%;
+`;
+const Customer = styled.h4`
+  font-size: 14px;
+`;
+const Kitchen = styled.blockquote`
+  font-size: 12px;
+`;
+const ArrowIcon = styled.img`
+  width: 12px;
+`;
 
-const Process = styled.div``;
+const Process = styled.div`
+  font-size: 7px;
+  background: #84c27d;
+  border-radius: 6px;
+  padding: 2px 6px;
+  margin-bottom: 20px;
+  color: #000;
+`;
