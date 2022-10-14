@@ -287,9 +287,11 @@ const Dish = styled.li`
   border-radius: 8px;
 `;
 const BgTag = styled.div`
+  padding-top: 5px;
   background-color: #2d2d2d;
   width: 90%;
   margin-left: 10%;
+  height: 140px;
 `;
 const Top = styled.div`
   display: flex;
@@ -307,17 +309,49 @@ const Arrow = styled.img`
   width: 100%;
 `;
 const Span = styled.span``;
-const DishDetail = styled.div``;
+const DishDetail = styled.div`
+  font-size: 15px;
+  margin: 10px;
+`;
 const Name = styled.h4``;
 const Price = styled.span`
-color:#8e8e8e`;
-const AddDish = styled.div``;
+  color: #8e8e8e;
+`;
+const AddDish = styled.div`
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 15px;
+`;
 const Minus = styled.span`
-border:1px solid #8e8e8e`;
-const MinusImage = styled.img``;
-const DishAdded = styled.span``;
-const Plus = styled.span``;
-const PlusImage = styled.img``;
+  border-radius: 4px;
+  border: 1px solid #8e8e8e;
+  margin-right: 10px;
+  display: flex;
+  width: 30px;
+  padding: 5px;
+`;
+const MinusImage = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+const DishAdded = styled.span`
+  font-size: 16px;
+  font-weight: 600;
+`;
+const Plus = styled.span`
+  border-radius: 4px;
+  border: 1px solid #8e8e8e;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  width: 30px;
+  padding: 5px;
+`;
+const PlusImage = styled.img`
+  width: 100%;
+  height: 100%;
+`;
 
 const Bottom = styled.div``;
 const ProcessingOrders = styled.ul`
