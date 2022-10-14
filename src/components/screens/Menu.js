@@ -309,9 +309,11 @@ const Arrow = styled.img`
 const Span = styled.span``;
 const DishDetail = styled.div``;
 const Name = styled.h4``;
-const Price = styled.span``;
+const Price = styled.span`
+color:#8e8e8e`;
 const AddDish = styled.div``;
-const Minus = styled.span``;
+const Minus = styled.span`
+border:1px solid #8e8e8e`;
 const MinusImage = styled.img``;
 const DishAdded = styled.span``;
 const Plus = styled.span``;
