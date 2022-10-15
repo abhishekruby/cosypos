@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import dishes from "../JSON/dishes.json";
 
-function Menu() {
+function Menu({addTOCart}) {
   // Dishes Rendering Function
   let renderDishes = () => {
     return dishes.map((dish) => {
       return (
-        <Dish style={{ background: `var(--card-5)` }}>
+        <Dish style={{ background: `var(--card-5)` }} key={dish.id}>
           <Top>
             <Span>Orders</Span>{" "}
             <ArrowDiv>
@@ -27,7 +27,7 @@ function Menu() {
               />
             </Minus>
             <DishAdded>0</DishAdded>
-            <Plus>
+            <Plus onClick={addTOCart()}>
               <PlusImage
                 src={require("../assets/images/plus.svg").default}
                 alt="Plus"

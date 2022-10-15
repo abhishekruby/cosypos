@@ -5,11 +5,14 @@ import MenuBar from "./components/screens/MenuBar";
 import Cart from "./components/screens/Cart";
 
 function App() {
+  let addToCart = () =>{
+    console.log("addtoCart")
+  }
   return (
     <>
       <Spotlight>
         <MenuBar />
-        <Menu />
+        <Menu {...addToCart} />
         <Cart />
       </Spotlight>
     </>
