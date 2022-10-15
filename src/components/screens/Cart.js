@@ -20,7 +20,9 @@ function Cart() {
               <Item>
                 <FlexContainer>
                   <Number>1</Number>
-                  <ItemTitle>Roast chicken</ItemTitle>
+                  <ItemTitle>
+                    Roast chicken <Multi>x3</Multi>
+                  </ItemTitle>
                   <Price>$25.50</Price>
                 </FlexContainer>
               </Item>
@@ -65,8 +67,8 @@ function Cart() {
                     ></WalletImage>
                     <WalletTitle>E-wallet</WalletTitle>
                   </Wallet>
-                  <PlaceOrdered>Place Order</PlaceOrdered>
                 </PaymentOption>
+                <PlaceOrdered>Place Order</PlaceOrdered>
               </PaymentMethod>
             </BottomSection>
           </TotalContainer>
@@ -113,49 +115,168 @@ const IconImage = styled.img`
   height: 60%;
 `;
 
-const ItemContainer = styled.div``;
+const ItemContainer = styled.div`
+  margin-top: 15px;
+`;
 const ItemList = styled.ul``;
 const Item = styled.li`
   border-radius: 8px;
   background: #2d2d2d;
+  padding: 10px 5px 10px 20px;
 `;
 const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
 `;
 const Number = styled.span`
-display:inline-block;
-width: 5%;`;
+  display: inline-block;
+  width: 8%;
+  height: 21px;
+  font-size: 13px;
+  background: #fff;
+  border-radius: 19px;
+  color: #000;
+  padding: 2px 8px;
+`;
 const ItemTitle = styled.h4`
-width: 60%;`;
+  width: 60%;
+`;
+const Multi = styled.span`
+  color: #a6a6a6;
+  font-size: 12px;
+  font-weight: 500;
+`;
 const Price = styled.span`
-width: 20%;`;
+  width: 20%;
+`;
 
-const TotalContainer = styled.div``;
-const TopSection = styled.div``;
-const SubTotal = styled.div``;
-const SubTitle = styled.h4``;
+const TotalContainer = styled.div`
+  border-radius: 8px;
+  background: #2d2d2d;
+  margin-top: 30px;
+  padding: 15px;
+`;
+const TopSection = styled.div`
+  margin-bottom: 60px;
+`;
+const SubTotal = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+`;
+const SubTitle = styled.h4`
+  color: #a6a6a6;
+`;
 const SubPrice = styled.span``;
-const Tax = styled.div``;
-const TaxTitle = styled.h4``;
+const Tax = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 14px;
+`;
+const TaxTitle = styled.h4`
+  color: #a6a6a6;
+`;
 const TaxPrice = styled.span``;
-const Line = styled.hr``;
+const Line = styled.hr`
+  border-top: 1px dashed #8e8e8e;
+`;
 
-const Total = styled.div``;
-const TotalTitle = styled.h4``;
-const TotalPrice = styled.span``;
+const Total = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+`;
+const TotalTitle = styled.h4`
+  font-weight: 500;
+`;
+const TotalPrice = styled.span`
+  font-weight: 500;
+`;
 
 const BottomSection = styled.div``;
 const PaymentMethod = styled.div``;
-const PaymentTitle = styled.h2``;
-const PaymentOption = styled.div``;
-const Cash = styled.div``;
-const CashImage = styled.img``;
-const CashTitle = styled.h2``;
-const DebitCard = styled.div``;
-const CardImage = styled.img``;
-const CardTitle = styled.h2``;
-const Wallet = styled.div``;
-const WalletImage = styled.img``;
-const WalletTitle = styled.h2``;
-const PlaceOrdered = styled.button``;
+const PaymentTitle = styled.h2`
+  font-size: 15px;
+  color: #a6a6a6;
+  margin-bottom: 10px;
+`;
+const PaymentOption = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 15px;
+`;
+
+const Cash = styled.div`
+  width: 30%;
+  text-align: center;
+`;
+const CashImage = styled.img`
+  padding: 10px 29px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  filter: invert(1);
+  cursor: pointer;
+  &:hover{
+    filter:invert(0);
+    background-color: #fff;
+    color: white;
+  }
+`;
+const CashTitle = styled.h2`
+  font-size: 13px;
+`;
+const DebitCard = styled.div`
+  width: 30%;
+  text-align: center;
+`;
+const CardImage = styled.img`
+  padding: 10px 29px;
+  border: 1px  solid #000;
+  border-radius: 5px;
+  filter: invert(1);
+  cursor: pointer;
+  &:hover{
+    filter:invert(0);
+    background-color: #fff;
+    color: white;
+  }
+`;
+const CardTitle = styled.h2`
+  font-size: 13px;
+`;
+const Wallet = styled.div`
+  width: 30%;
+  text-align: center;
+`;
+const WalletImage = styled.img`
+  padding: 10px 29px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  filter: invert(1);
+  cursor: pointer;
+  &:hover{
+    filter:invert(0);
+    background-color: #fff;
+    color: white;
+  }
+`;
+const WalletTitle = styled.h2`
+  font-size: 13px;
+`;
+const PlaceOrdered = styled.button`
+  text-align: center;
+  background: #fff;
+  display: block;
+  width: 100%;
+  padding: 15px 10px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+`;
