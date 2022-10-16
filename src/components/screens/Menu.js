@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import dishes from "../JSON/dishes.json";
 
-function Menu({addTOCart}) {
+function Menu({addToCart}) {
+
   // Dishes Rendering Function
   let renderDishes = () => {
     return dishes.map((dish) => {
@@ -27,7 +28,11 @@ function Menu({addTOCart}) {
               />
             </Minus>
             <DishAdded>0</DishAdded>
-            <Plus onClick={addTOCart()}>
+            <Plus
+              onClick={() => {
+                addToCart(dish.id);
+              }}
+            >
               <PlusImage
                 src={require("../assets/images/plus.svg").default}
                 alt="Plus"
@@ -291,7 +296,7 @@ const Dish = styled.li`
   margin: 5px 0px;
   border-radius: 8px;
   position: relative;
-  z-index: -1;
+  z-index: 1;
   &::before {
     content: "";
     position: absolute;

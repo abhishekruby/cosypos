@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-function Cart() {
+function Cart({ cartItems }) {
+  const [total, setTotal] = useState(0);
+
+  // Rending Cart items
+  let renderCartItems = () => {
+    if (cartItems.length <= 0) {
+      return <ItemTitle>Empty Cart</ItemTitle>;
+    } else {
+      return cartItems.map((item) => {
+        return (
+          <Item key={item.id}>
+            <FlexContainer>
+              <Number>{item.number}</Number>
+              <ItemTitle>
+                {item.title}
+                <Multi>x{item.qty}</Multi>
+              </ItemTitle>
+              <Price>${item.price}</Price>
+            </FlexContainer>
+          </Item>
+        );
+      });
+    }
+  };
+
+//   Rending the SubTotal function
+
   return (
     <CartContainer>
       <Wrapper className="wrapper">
@@ -16,24 +42,14 @@ function Cart() {
             </Icon>
           </Head>
           <ItemContainer>
-            <ItemList>
-              <Item>
-                <FlexContainer>
-                  <Number>1</Number>
-                  <ItemTitle>
-                    Roast chicken <Multi>x3</Multi>
-                  </ItemTitle>
-                  <Price>$25.50</Price>
-                </FlexContainer>
-              </Item>
-            </ItemList>
+            <ItemList>{renderCartItems()}</ItemList>
           </ItemContainer>
 
           <TotalContainer>
             <TopSection>
               <SubTotal>
                 <SubTitle>Subtotal</SubTitle>
-                <SubPrice>$171.5</SubPrice>
+                <SubPrice>$</SubPrice>
               </SubTotal>
               <Tax>
                 <TaxTitle>Tax 10%</TaxTitle>
@@ -121,6 +137,7 @@ const ItemContainer = styled.div`
 const ItemList = styled.ul``;
 const Item = styled.li`
   border-radius: 8px;
+  margin-top: 10px;
   background: #2d2d2d;
   padding: 10px 5px 10px 20px;
 `;
@@ -223,8 +240,8 @@ const CashImage = styled.img`
   border-radius: 5px;
   filter: invert(1);
   cursor: pointer;
-  &:hover{
-    filter:invert(0);
+  &:hover {
+    filter: invert(0);
     background-color: #fff;
     color: white;
   }
@@ -238,12 +255,12 @@ const DebitCard = styled.div`
 `;
 const CardImage = styled.img`
   padding: 10px 29px;
-  border: 1px  solid #000;
+  border: 1px solid #000;
   border-radius: 5px;
   filter: invert(1);
   cursor: pointer;
-  &:hover{
-    filter:invert(0);
+  &:hover {
+    filter: invert(0);
     background-color: #fff;
     color: white;
   }
@@ -261,8 +278,8 @@ const WalletImage = styled.img`
   border-radius: 5px;
   filter: invert(1);
   cursor: pointer;
-  &:hover{
-    filter:invert(0);
+  &:hover {
+    filter: invert(0);
     background-color: #fff;
     color: white;
   }
