@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-function Cart({ cartItems }) {
-  const [total, setTotal] = useState(0);
-
+function Cart({ cartItems,total }) {
+let tax = total*10/100;
+console.log(total);
   // Rending Cart items
   let renderCartItems = () => {
     if (cartItems.length <= 0) {
@@ -16,7 +16,7 @@ function Cart({ cartItems }) {
               <Number>{item.number}</Number>
               <ItemTitle>
                 {item.title}
-                <Multi>x{item.qty}</Multi>
+                <Multi>{" "} x{item.qty}</Multi>
               </ItemTitle>
               <Price>${item.price}</Price>
             </FlexContainer>
@@ -49,16 +49,16 @@ function Cart({ cartItems }) {
             <TopSection>
               <SubTotal>
                 <SubTitle>Subtotal</SubTitle>
-                <SubPrice>$</SubPrice>
+                <SubPrice>$ {total}</SubPrice>
               </SubTotal>
               <Tax>
                 <TaxTitle>Tax 10%</TaxTitle>
-                <TaxPrice>$17.15</TaxPrice>
+                <TaxPrice>$ {tax}</TaxPrice>
               </Tax>
               <Line />
               <Total>
                 <TotalTitle>Total</TotalTitle>
-                <TotalPrice>$2883.5</TotalPrice>
+                <TotalPrice>$ {total+tax}</TotalPrice>
               </Total>
             </TopSection>
             <BottomSection>

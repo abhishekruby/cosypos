@@ -8,10 +8,11 @@ import dishes from "../src/components/JSON/dishes.json";
 
 function App() {
   const [cartItems, setCartItem] = useState([]);
-
-  // add to cart function 
+  const [total, setTotal] = useState(0);
+  const [qty, setQty] = useState(0);
+  // add to cart function
   const addToCart = (id) => {
-    let isCart = true;
+    let isCart = false;
 
     let item = dishes.find((dish) => dish.id === id);
     if (cartItems.length > 0) {
@@ -19,8 +20,8 @@ function App() {
         if (cartItem.id === item.id) {
           cartItem.qty += 1;
           cartItem.price += item.price;
-          console.log(cartItems);
           setCartItem([...cartItems]);
+          setTotal(total + item.price);
           return true;
         }
         return false;
@@ -34,6 +35,7 @@ function App() {
         qty: 1,
       };
       // console.log(newItem);
+      setTotal(total + item.price);
       setCartItem([...cartItems, newItem]);
     }
 
@@ -46,20 +48,22 @@ function App() {
           price: item.price,
           qty: 1,
         };
-  
+
         setCartItem([...cartItems, newItem]);
+        setTotal(total + item.price);
         console.log("i have entered map");
       }
       return null;
     });
   };
 
+
   return (
     <>
       <Spotlight>
         <MenuBar />
         <Menu addToCart={addToCart} />
-        <Cart cartItems={cartItems} />
+        <Cart cartItems={cartItems} total={total} />
       </Spotlight>
     </>
   );
