@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 function MenuBar() {
   return (
@@ -7,29 +8,41 @@ function MenuBar() {
       <Wrapper className="wrapper">
         <FlexContainer>
           <TopSection>
-            <Logo>
-              <LogoAnchor>
-                <LogoImage
-                  src={require("../assets/images/logo.png")}
-                  alt="Cosypos Logo"
-                />
-              </LogoAnchor>
-            </Logo>
+            <Link to="/">
+              <Logo>
+                <LogoAnchor>
+                  <LogoImage
+                    src={require("../assets/images/logo.png")}
+                    alt="Cosypos Logo"
+                  />
+                </LogoAnchor>
+              </Logo>
+            </Link>
             <MenuListContainer>
               <MenuList>
-                <ListAnchor> Reservation</ListAnchor>
+                <Link to="/Reservation">
+                  <ListAnchor> Reservation</ListAnchor>
+                </Link>
               </MenuList>
               <MenuList>
-                <ListAnchor> Table Services</ListAnchor>
+                <Link to="/TableServices">
+                  <ListAnchor> Table Services</ListAnchor>
+                </Link>
               </MenuList>
               <MenuList>
-                <ListAnchor> Menu</ListAnchor>
+                <Link to="/Menu">
+                  <ListAnchor> Menu</ListAnchor>
+                </Link>
               </MenuList>
               <MenuList>
-                <ListAnchor> Delivery</ListAnchor>
+                <Link to="/Delivery">
+                  <ListAnchor> Delivery</ListAnchor>
+                </Link>
               </MenuList>
               <MenuList>
-                <ListAnchor> Accounting</ListAnchor>
+                <Link to="/Accounting">
+                  <ListAnchor> Accounting</ListAnchor>
+                </Link>
               </MenuList>
             </MenuListContainer>
           </TopSection>
@@ -132,9 +145,11 @@ const MenuList = styled.li`
     transition: opacity 0.2s ease-out;
   }
 `;
-const ListAnchor = styled.a`
+const ListAnchor = styled.span`
+  color: #a6a6a6;
   font-size: 15px;
   margin-left: 20px;
+  padding: 5px;
 `;
 
 const BottomSection = styled.div`

@@ -12,6 +12,7 @@ import Accounting from "./components/screens/comingsoonpages/Accounting";
 import Delivery from "./components/screens/comingsoonpages/Delivery";
 import Reservation from "./components/screens/comingsoonpages/Reservation";
 import TimeServices from "./components/screens/comingsoonpages/TimeServices";
+import PageNotFound from "./components/screens/PageNotFound";
 
 function App() {
   const [cartItems, setCartItem] = useState([]);
@@ -131,7 +132,26 @@ function App() {
               ]}
             />
             <Route
-              path={"/accounting"}
+              path={"/Menu"}
+              element={[
+                <MenuBar />,
+                <Menu
+                  addToCart={addToCart}
+                  removeFromCart={removeFromCart}
+                  qty1={qty1}
+                  qty2={qty2}
+                  qty3={qty3}
+                  qty4={qty4}
+                  qty5={qty5}
+                  qty6={qty6}
+                  qty7={qty7}
+                  qty8={qty8}
+                />,
+                <Cart cartItems={cartItems} total={total} />,
+              ]}
+            />
+            <Route
+              path={"/Accounting"}
               element={[
                 <MenuBar />,
                 <Accounting />,
@@ -155,13 +175,14 @@ function App() {
               ]}
             />
             <Route
-              path={"/TimeServices"}
+              path={"/TableServices"}
               element={[
                 <MenuBar />,
                 <TimeServices />,
                 <Cart cartItems={cartItems} total={total} />,
               ]}
             />
+            <Route path={"*"} element={<PageNotFound/>}/>
           </Routes>
         </Router>
       </Spotlight>
