@@ -76,12 +76,18 @@ const [qty8, setQty8] = useState(0);
     let item = dishes.find((dish) => dish.id === id);
     cartItems.find((cartItem) => {
       if (cartItem.id === item.id) {
-        cartItem.qty -= 1;
-        cartItem.price -= item.price;
-        setCartItem([...cartItems]);
-        setTotal(total - item.price);
-        eval(`setQty${item.id}(qty${item.id} - 1)`);
-        console.log(eval(`qty${item.id}`));
+        if(cartItem.qty === 1){
+          cartItems.pop(cartItem)
+          eval(`setQty${item.id}(qty${item.id} - 1)`);
+          setTotal(total - item.price);
+        }else{
+          cartItem.qty -= 1;
+          cartItem.price -= item.price;
+          setCartItem([...cartItems]);
+          setTotal(total - item.price);
+          eval(`setQty${item.id}(qty${item.id} - 1)`);
+          console.log(eval(`qty${item.id}`));
+        }
       }
       return null;
     });
