@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import dishes from "../JSON/dishes.json";
 
-function Menu({addToCart}) {
+function Menu({addToCart,removeFromCart}) {
 
   // Dishes Rendering Function
   let renderDishes = () => {
@@ -21,7 +21,9 @@ function Menu({addToCart}) {
             <Price>${dish.price}</Price>
           </DishDetail>
           <AddDish>
-            <Minus>
+            <Minus onClick={()=>{
+              removeFromCart(dish.id)
+            }}>
               <MinusImage
                 src={require("../assets/images/minus.svg").default}
                 alt="Minus"

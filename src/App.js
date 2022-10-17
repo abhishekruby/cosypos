@@ -57,12 +57,23 @@ function App() {
     });
   };
 
-
+  let removeFromCart = (id) => {
+    let item = dishes.find((dish) => dish.id === id);
+    cartItems.find((cartItem) => {
+      if (cartItem.id === item.id) {
+        cartItem.qty -= 1;
+        cartItem.price -= item.price;
+        setCartItem([...cartItems]);
+        setTotal(total - item.price);
+      }
+      return null;
+    });
+  };
   return (
     <>
       <Spotlight>
         <MenuBar />
-        <Menu addToCart={addToCart} />
+        <Menu addToCart={addToCart} removeFromCart={removeFromCart} />
         <Cart cartItems={cartItems} total={total} />
       </Spotlight>
     </>
