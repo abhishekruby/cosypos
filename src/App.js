@@ -77,8 +77,10 @@ const [qty8, setQty8] = useState(0);
     cartItems.find((cartItem) => {
       if (cartItem.id === item.id) {
         if(cartItem.qty === 1){
-          cartItems.pop(cartItem)
-          eval(`setQty${item.id}(qty${item.id} - 1)`);
+         let newArr = cartItems.filter((i)=>{return i.id !== cartItem.id})
+         console.log(newArr);
+          setCartItem(newArr)
+          eval(`setQty${item.id}(0)`);
           setTotal(total - item.price);
         }else{
           cartItem.qty -= 1;

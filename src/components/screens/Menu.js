@@ -12,7 +12,7 @@ function Menu({
   qty5,
   qty6,
   qty7,
-  qty8
+  qty8,
 }) {
   let qty;
   const [first, setfirst] = useState([]);
@@ -247,7 +247,7 @@ const Head = styled.div`
   display: flex;
 `;
 const Search = styled.div`
-  width: 32%;
+  width: 38%;
   display: flex;
   align-items: center;
   background: #2d2d2d;
@@ -260,6 +260,7 @@ const SearchIcon = styled.img`
   height: 20px;
 `;
 const SearchInput = styled.input`
+  color: #fff;
   &::placeholder {
     color: #fff;
     font-size: 15px;
