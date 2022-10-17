@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import dishes from "../JSON/dishes.json";
 
 function Menu({addToCart,removeFromCart}) {
+const [first, setfirst] = useState([])
 
   // Dishes Rendering Function
   let renderDishes = () => {
@@ -29,7 +30,7 @@ function Menu({addToCart,removeFromCart}) {
                 alt="Minus"
               />
             </Minus>
-            <DishAdded>0</DishAdded>
+            <DishAdded>{dish.qty}</DishAdded>
             <Plus
               onClick={() => {
                 addToCart(dish.id);
@@ -358,6 +359,7 @@ const Minus = styled.span`
   display: flex;
   width: 30px;
   padding: 5px;
+  cursor: pointer;
 `;
 const MinusImage = styled.img`
   width: 100%;
@@ -366,6 +368,7 @@ const MinusImage = styled.img`
 const DishAdded = styled.span`
   font-size: 16px;
   font-weight: 600;
+  
 `;
 const Plus = styled.span`
   border-radius: 4px;
@@ -375,6 +378,7 @@ const Plus = styled.span`
   display: flex;
   width: 30px;
   padding: 5px;
+  cursor: pointer;
 `;
 const PlusImage = styled.img`
   width: 100%;

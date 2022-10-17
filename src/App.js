@@ -9,7 +9,14 @@ import dishes from "../src/components/JSON/dishes.json";
 function App() {
   const [cartItems, setCartItem] = useState([]);
   const [total, setTotal] = useState(0);
-  const [qty, setQty] = useState(0);
+const [qty1, setQty1] = useState(0);
+const [qty2, setQty1] = useState(0);
+const [qty3, setQty1] = useState(0);
+const [qty4, setQty1] = useState(0);
+const [qty5, setQty1] = useState(0);
+const [qty6, setQty1] = useState(0);
+const [qty7, setQty1] = useState(0);
+const [qty8, setQty1] = useState(0);
   // add to cart function
   const addToCart = (id) => {
     let isCart = false;
@@ -57,6 +64,8 @@ function App() {
     });
   };
 
+
+  // Removing function 
   let removeFromCart = (id) => {
     let item = dishes.find((dish) => dish.id === id);
     cartItems.find((cartItem) => {
@@ -69,6 +78,8 @@ function App() {
       return null;
     });
   };
+
+
   return (
     <>
       <Spotlight>
