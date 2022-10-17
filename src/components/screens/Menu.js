@@ -2,8 +2,20 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import dishes from "../JSON/dishes.json";
 
-function Menu({addToCart,removeFromCart}) {
-const [first, setfirst] = useState([])
+function Menu({
+  addToCart,
+  removeFromCart,
+  qty1,
+  qty2,
+  qty3,
+  qty4,
+  qty5,
+  qty6,
+  qty7,
+  qty8
+}) {
+  let qty;
+  const [first, setfirst] = useState([]);
 
   // Dishes Rendering Function
   let renderDishes = () => {
@@ -22,15 +34,17 @@ const [first, setfirst] = useState([])
             <Price>${dish.price}</Price>
           </DishDetail>
           <AddDish>
-            <Minus onClick={()=>{
-              removeFromCart(dish.id)
-            }}>
+            <Minus
+              onClick={() => {
+                removeFromCart(dish.id);
+              }}
+            >
               <MinusImage
                 src={require("../assets/images/minus.svg").default}
                 alt="Minus"
               />
             </Minus>
-            <DishAdded>{dish.qty}</DishAdded>
+            <DishAdded>{eval(`qty${dish.id}`)}</DishAdded>
             <Plus
               onClick={() => {
                 addToCart(dish.id);
@@ -368,7 +382,6 @@ const MinusImage = styled.img`
 const DishAdded = styled.span`
   font-size: 16px;
   font-weight: 600;
-  
 `;
 const Plus = styled.span`
   border-radius: 4px;

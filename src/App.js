@@ -10,13 +10,13 @@ function App() {
   const [cartItems, setCartItem] = useState([]);
   const [total, setTotal] = useState(0);
 const [qty1, setQty1] = useState(0);
-const [qty2, setQty1] = useState(0);
-const [qty3, setQty1] = useState(0);
-const [qty4, setQty1] = useState(0);
-const [qty5, setQty1] = useState(0);
-const [qty6, setQty1] = useState(0);
-const [qty7, setQty1] = useState(0);
-const [qty8, setQty1] = useState(0);
+const [qty2, setQty2] = useState(0);
+const [qty3, setQty3] = useState(0);
+const [qty4, setQty4] = useState(0);
+const [qty5, setQty5] = useState(0);
+const [qty6, setQty6] = useState(0);
+const [qty7, setQty7] = useState(0);
+const [qty8, setQty8] = useState(0);
   // add to cart function
   const addToCart = (id) => {
     let isCart = false;
@@ -29,6 +29,8 @@ const [qty8, setQty1] = useState(0);
           cartItem.price += item.price;
           setCartItem([...cartItems]);
           setTotal(total + item.price);
+          eval(`setQty${item.id}(qty${item.id} + 1)`);
+          console.log(eval(`qty${item.id}`));
           return true;
         }
         return false;
@@ -41,9 +43,11 @@ const [qty8, setQty1] = useState(0);
         price: item.price,
         qty: 1,
       };
-      // console.log(newItem);
+      
       setTotal(total + item.price);
       setCartItem([...cartItems, newItem]);
+      eval(`setQty${item.id}(qty${item.id} + 1)`);
+      console.log(eval(`qty${item.id}`));
     }
 
     cartItems.map(() => {
@@ -59,6 +63,8 @@ const [qty8, setQty1] = useState(0);
         setCartItem([...cartItems, newItem]);
         setTotal(total + item.price);
         console.log("i have entered map");
+        eval(`setQty${item.id}(qty${item.id} + 1)`);
+        console.log(eval(`qty${item.id}`));
       }
       return null;
     });
@@ -74,6 +80,8 @@ const [qty8, setQty1] = useState(0);
         cartItem.price -= item.price;
         setCartItem([...cartItems]);
         setTotal(total - item.price);
+        eval(`setQty${item.id}(qty${item.id} - 1)`);
+        console.log(eval(`qty${item.id}`));
       }
       return null;
     });
@@ -84,7 +92,7 @@ const [qty8, setQty1] = useState(0);
     <>
       <Spotlight>
         <MenuBar />
-        <Menu addToCart={addToCart} removeFromCart={removeFromCart} />
+        <Menu addToCart={addToCart} removeFromCart={removeFromCart} qty1={qty1} qty2={qty2} qty3={qty3} qty4={qty4} qty5={qty5} qty6={qty6} qty7={qty7} qty8={qty8} />
         <Cart cartItems={cartItems} total={total} />
       </Spotlight>
     </>
