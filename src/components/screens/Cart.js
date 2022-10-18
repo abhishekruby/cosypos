@@ -228,11 +228,17 @@ const PaymentOption = styled.div`
   justify-content: space-evenly;
   align-items: center;
   margin-bottom: 15px;
+  @media all and (max-width: 1280px){
+    flex-wrap: wrap;
+  }
 `;
 
 const Cash = styled.div`
   width: 30%;
   text-align: center;
+  @media all and (max-width: 1280px){
+    width: 100%;
+  }
 `;
 const CashImage = styled.img`
   padding: 10px 29px;
@@ -252,6 +258,9 @@ const CashTitle = styled.h2`
 const DebitCard = styled.div`
   width: 30%;
   text-align: center;
+  @media all and (max-width: 1280px){
+    width: 100%;
+  }
 `;
 const CardImage = styled.img`
   padding: 10px 29px;
@@ -271,6 +280,9 @@ const CardTitle = styled.h2`
 const Wallet = styled.div`
   width: 30%;
   text-align: center;
+  @media all and (max-width: 1280px){
+    width: 100%;
+  }
 `;
 const WalletImage = styled.img`
   padding: 10px 29px;

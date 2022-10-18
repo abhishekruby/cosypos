@@ -88,13 +88,15 @@ export default MenuBar;
 
 const MenuContainer = styled.aside`
   width: 18%;
+  height: inherit;
 `;
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+height:100%;`;
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 750px;
+  height: 100%;
 `;
 const TopSection = styled.div``;
 const Logo = styled.h1`
@@ -144,6 +146,12 @@ const MenuList = styled.li`
     opacity: 0.7;
     transition: opacity 0.2s ease-out;
   }
+
+  @media all and (max-width: 1280px){
+    width: 100%;
+  color: #a6a6a6;
+  position: relative;
+}
 `;
 const ListAnchor = styled.span`
   color: #a6a6a6;
@@ -159,6 +167,7 @@ const BottomSection = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-bottom: 15px;
+
 `;
 const UserList = styled.ul`
   height: 50%;
@@ -185,6 +194,9 @@ const Letter = styled.span`
 `;
 const Name = styled.span`
   font-size: 14px;
+  @media all and (max-width: 1080px){
+    font-size: 12px;
+  }
 `;
 
 const Year = styled.div``;

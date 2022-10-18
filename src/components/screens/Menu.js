@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import dishes from "../JSON/dishes.json";
 
@@ -14,8 +14,8 @@ function Menu({
   qty7,
   qty8,
 }) {
-  let qty;
-  const [first, setfirst] = useState([]);
+
+
 
   // Dishes Rendering Function
   let renderDishes = () => {
@@ -328,6 +328,14 @@ const Dish = styled.li`
   &:hover::before {
     opacity: 1;
   }
+  @media all and (max-width: 1280px){
+    width: 30%;
+  height: 140px;
+  margin: 5px 0px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
 `;
 const Top = styled.div`
   display: flex;
@@ -406,6 +414,10 @@ const ProcessingOrders = styled.ul`
   display: flex;
   align-items: center;
   border-top: 1px solid #8e8e8e;
+  @media all and (max-width: 1280px){
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 `;
 const Order = styled.li`
   display: flex;
@@ -416,10 +428,27 @@ const Order = styled.li`
   padding: 8px 5px;
   &:first-child {
     width: 30%;
+    border-right: 1px solid #8e8e8e;
+    @media all and (max-width: 1280px){
+    justify-content: space-evenly;
+    width: 40%;
+}
   }
   &:last-child {
     border: none;
+    @media all and (max-width: 1280px){
+      width: 100%;
+      border-top: 1px solid #8e8e8e;
+    }
   }
+  @media all and (max-width: 1280px){
+    justify-content: space-evenly;
+    border: none;
+    width: 40%;
+}
+@media all and (max-width: 1080px){
+      width: 55%;
+}
 `;
 const Code = styled.div`
   background: var(--card-4);
